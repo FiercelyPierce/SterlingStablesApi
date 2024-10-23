@@ -6,7 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/server.js",
     "start-prod": "node ./src/server.js",
-    "swagger": "node ./src/swagger.js"
+    "swagger": "node ./src/swagger.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
   },
   "keywords": [],
   "author": "",

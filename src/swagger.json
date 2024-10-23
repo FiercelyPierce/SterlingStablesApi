@@ -11,8 +11,9 @@
     "https"
   ],
   "paths": {
-    "/goats/": {
+    "/goats": {
       "get": {
+        "summary": "Get all goats",
         "description": "",
         "tags": [
           "Goats"
@@ -27,6 +28,7 @@
         }
       },
       "post": {
+        "summary": "Create a goat",
         "description": "",
         "tags": [
           "Goats"
@@ -43,6 +45,7 @@
     },
     "/goats/{id}": {
       "get": {
+        "summary": "Get a goat by ID",
         "description": "",
         "tags": [
           "Goats"
@@ -65,6 +68,7 @@
         }
       },
       "put": {
+        "summary": "Update a goat by ID",
         "description": "",
         "tags": [
           "Goats"
@@ -111,6 +115,7 @@
         }
       },
       "delete": {
+        "summary": "Delete a goat by ID",
         "description": "",
         "tags": [
           "Goats"
@@ -133,7 +138,7 @@
         }
       }
     },
-    "/pigs/": {
+    "/pigs": {
       "get": {
         "description": "",
         "tags": [

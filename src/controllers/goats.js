@@ -7,6 +7,10 @@ const allGoats = async (req, res) => {
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
+  }).catch((err) => {
+    res.status(500).send({
+      message: err.message || 'Some error occurred while retrieving goats info.'
+    });
   });
 };
 
@@ -17,6 +21,10 @@ const goatById = async (req, res) => {
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
+  }).catch((error) => {
+    res.status(500).send({
+      message: error.message || 'Some error occurred while retrieving the goat info.'
+    });
   });
 };
 
@@ -62,6 +70,10 @@ const deleteGoat = async (req, res) => {
   res.status(200).json({
     message: 'Goat deleted successfully',
     result: result
+  }).catch((error) => {
+    res.status(500).send({
+      message: error.message || 'Some error occurred while deleting the goat.'
+    });
   });
 };
 
