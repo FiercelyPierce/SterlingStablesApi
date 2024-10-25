@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Sterling Stables API'
   },
-  host: 'cse341-na6a.onrender.com',
+  host: 'sterlingstablesapi.onrender.com',
   schemes: ['https']
 };
 

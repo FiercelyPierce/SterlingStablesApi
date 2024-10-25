@@ -5,7 +5,7 @@
     "description": "Sterling Stables API",
     "version": "1.0.0"
   },
-  "host": "cse341-na6a.onrender.com",
+  "host": "sterlingstablesapi.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
