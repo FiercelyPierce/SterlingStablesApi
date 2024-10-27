@@ -33,6 +33,32 @@
         "tags": [
           "Goats"
         ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fullName": {
+                  "example": "Tony Shlaykii"
+                },
+                "breed": {
+                  "example": "Nubian"
+                },
+                "gender": {
+                  "example": "female"
+                },
+                "coatPattern": {
+                  "example": "Moon Spots"
+                },
+                "eyeColor": {
+                  "example": "Brown"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -157,6 +183,32 @@
         "description": "",
         "tags": [
           "Pigs"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fullName": {
+                  "example": "Spanky"
+                },
+                "breed": {
+                  "example": "Tanks"
+                },
+                "gender": {
+                  "example": "male"
+                },
+                "coloration": {
+                  "example": "Black"
+                },
+                "eyeColor": {
+                  "example": "Black"
+                }
+              }
+            }
+          }
         ],
         "responses": {
           "201": {

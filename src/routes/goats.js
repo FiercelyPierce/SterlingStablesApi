@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const { userValidationRules, validate } = require('../middleware/validator');
+const validation = require('../middleware/validator');
 
 const contactController = require('../controllers/goats');
 
 router.get('/', contactController.allGoats);
 router.get('/:id', contactController.goatById);
 
-router.post('/', contactController.addGoat);
+router.post('/', validation.saveGoat, contactController.addGoat);
 
-router.put('/:id', contactController.updateGoat);
+router.put('/:id', validation.saveGoat, contactController.updateGoat);
 
 router.delete('/:id', contactController.deleteGoat);
 
