@@ -1,48 +1,27 @@
-const validator = require('../helpers/validate');
+const { body, validationResult } = require('express-validator')
 
-const saveGoat = (req, res, next) => {
-  const validationRule = {
+const userValidationRules = () => {
+  return [{
     fullName: 'required|string',
     breed: 'required|string',
-    gender: 'required|string',
-    coatPattern: 'required|string',
-    eyeColor: 'required|string'
-  };
-  validator(req.body, validationRule, {}, (err, status) => {
-    if (!status) {
-      res.status(412).send({
-        success: false,
-        message: 'Validation failed',
-        data: err
-      });
-    } else {
-      next();
-    }
-  });
-};
+    
+  }]
+}
 
-const savePig = (req, res, next) => {
-  const validationRule = {
-    fullName: 'required|string',
-    breed: 'required|string',
-    gender: 'required|string',
-    coloration: 'required|string',
-    eyeColor: 'required|string'
-  };
-  validator(req.body, validationRule, {}, (err, status) => {
-    if (!status) {
-      res.status(412).send({
-        success: false,
-        message: 'Validation failed',
-        data: err
-      });
-    } else {
-      next();
-    }
-  });
-};
+const validate = (req, res, next) => {
+  const errors = validationResult(req)
+  if (errors.isEmpty()) {
+    return next()
+  }
+  const extractedErrors = []
+  errors.array().map(err => extractedErrors.push({ [err.param]: err.msg }))
+
+  return res.status(422).json({
+    errors: extractedErrors,
+  })
+}
 
 module.exports = {
-  saveGoat,
-  savePig
-};
+  userValidationRules,
+  validate,
+}
