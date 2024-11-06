@@ -11,75 +11,24 @@
     "https"
   ],
   "paths": {
-    "/goats": {
+    "/goats/": {
       "get": {
-        "summary": "Get all goats",
         "description": "",
-        "tags": [
-          "Goats"
-        ],
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
       "post": {
-        "summary": "Create a goat",
         "description": "",
-        "tags": [
-          "Goats"
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/goats/{id}": {
-      "get": {
-        "summary": "Get a goat by ID",
-        "description": "",
-        "tags": [
-          "Goats"
-        ],
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "summary": "Update a goat by ID",
-        "description": "",
-        "tags": [
-          "Goats"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "body",
             "in": "body",
@@ -106,20 +55,18 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "201": {
+            "description": "Created"
           },
           "500": {
             "description": "Internal Server Error"
           }
         }
-      },
-      "delete": {
-        "summary": "Delete a goat by ID",
+      }
+    },
+    "/goats/{id}": {
+      "get": {
         "description": "",
-        "tags": [
-          "Goats"
-        ],
         "produces": [
           "application/json"
         ],
@@ -134,16 +81,84 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
-    "/pigs": {
+    "/pigs/": {
       "get": {
         "description": "",
-        "tags": [
-          "Pigs"
-        ],
         "produces": [
           "application/json"
         ],
@@ -155,9 +170,6 @@
       },
       "post": {
         "description": "",
-        "tags": [
-          "Pigs"
-        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -171,9 +183,6 @@
     "/pigs/{id}": {
       "get": {
         "description": "",
-        "tags": [
-          "Pigs"
-        ],
         "produces": [
           "application/json"
         ],
@@ -193,9 +202,6 @@
       },
       "put": {
         "description": "",
-        "tags": [
-          "Pigs"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -239,9 +245,6 @@
       },
       "delete": {
         "description": "",
-        "tags": [
-          "Pigs"
-        ],
         "produces": [
           "application/json"
         ],

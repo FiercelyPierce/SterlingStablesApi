@@ -7,7 +7,7 @@ const contactController = require('../controllers/goats');
 router.get('/', contactController.allGoats);
 router.get('/:id', contactController.goatById);
 
-router.post('/', contactController.addGoat);
+router.post('/', contactController.createGoat);
 
 router.put('/:id', contactController.updateGoat);
 

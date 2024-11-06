@@ -4,7 +4,9 @@ const userValidationRules = () => {
   return [{
     fullName: 'required|string',
     breed: 'required|string',
-    
+    gender: 'required|string',
+    coatPattern: 'required|string',
+    eyeColor: 'required|string',
   }]
 }
 
