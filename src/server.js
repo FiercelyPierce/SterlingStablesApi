@@ -8,7 +8,7 @@ require('dotenv').config();
 const port = process.env.PORT || 8080;
 
 const config = {
-  authRequired: false,
+  authRequired: true,
   auth0Logout: true,
   secret: process.env.SECRET,
   baseURL: process.env.BASE_URL,

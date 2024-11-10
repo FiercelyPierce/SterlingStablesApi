@@ -14,6 +14,7 @@
     "/goats/": {
       "get": {
         "description": "",
+        "tags": ["goats"],
         "produces": [
           "application/json"
         ],
@@ -28,6 +29,7 @@
       },
       "post": {
         "description": "",
+        "tags": ["goats"],
         "parameters": [
           {
             "name": "body",
@@ -36,19 +38,19 @@
               "type": "object",
               "properties": {
                 "fullName": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "breed": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "gender": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "coatPattern": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "eyeColor": {
-                  "example": "any"
+                  "example": "string"
                 }
               }
             }
@@ -67,6 +69,7 @@
     "/goats/{id}": {
       "get": {
         "description": "",
+        "tags": ["goats"],
         "produces": [
           "application/json"
         ],
@@ -89,6 +92,7 @@
       },
       "put": {
         "description": "",
+        "tags": ["goats"],
         "parameters": [
           {
             "name": "id",
@@ -103,19 +107,19 @@
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "lastName": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "favoriteColor": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "birthday": {
-                  "example": "any"
+                  "example": "string"
                 }
               }
             }
@@ -135,6 +139,7 @@
       },
       "delete": {
         "description": "",
+        "tags": ["goats"],
         "parameters": [
           {
             "name": "id",
@@ -159,6 +164,7 @@
     "/pigs/": {
       "get": {
         "description": "",
+        "tags": ["pigs"],
         "produces": [
           "application/json"
         ],
@@ -170,6 +176,7 @@
       },
       "post": {
         "description": "",
+        "tags": ["pigs"],
         "responses": {
           "201": {
             "description": "Created"
@@ -183,6 +190,7 @@
     "/pigs/{id}": {
       "get": {
         "description": "",
+        "tags": ["pigs"],
         "produces": [
           "application/json"
         ],
@@ -202,6 +210,7 @@
       },
       "put": {
         "description": "",
+        "tags": ["pigs"],
         "parameters": [
           {
             "name": "id",
@@ -245,6 +254,7 @@
       },
       "delete": {
         "description": "",
+        "tags": ["pigs"],
         "produces": [
           "application/json"
         ],
