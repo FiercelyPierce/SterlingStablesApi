@@ -2,13 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./database/connection');
 const app = express();
-const { auth } = require('express-openid-connect');
+const { auth, requiresAuth } = require('express-openid-connect');
 require('dotenv').config();
 
 const port = process.env.PORT || 8080;
 
 const config = {
-  authRequired: true,
+  authRequired: false,
   auth0Logout: true,
   secret: process.env.SECRET,
   baseURL: process.env.BASE_URL,
@@ -23,6 +23,11 @@ app.use(auth(config));
 app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
+
+app.get('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+});
+
 
 app
   .use(bodyParser.json())

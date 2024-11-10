@@ -177,6 +177,32 @@
       "post": {
         "description": "",
         "tags": ["pigs"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fullName": {
+                  "example": "string"
+                },
+                "breed": {
+                  "example": "string"
+                },
+                "gender": {
+                  "example": "string"
+                },
+                "coloration": {
+                  "example": "string"
+                },
+                "eyeColor": {
+                  "example": "string"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -225,19 +251,19 @@
               "type": "object",
               "properties": {
                 "fullName": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "breed": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "gender": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "coloration": {
-                  "example": "any"
+                  "example": "string"
                 },
                 "eyeColor": {
-                  "example": "any"
+                  "example": "string"
                 }
               }
             }
